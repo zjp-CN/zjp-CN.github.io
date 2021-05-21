@@ -78,9 +78,6 @@ footer:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/"
-    - label: "知乎"
-      icon: "fab fa-fw fa-zhihu"
-      url: "https://zhihu.com/"
 
 defaults:
   # _posts
@@ -92,7 +89,7 @@ defaults:
       author_profile: true
       read_time: true
       comments: false
-      share: true
+      share: false
       related: true
       show_date: true
   # _pages
