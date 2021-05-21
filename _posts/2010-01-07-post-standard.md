@@ -10,6 +10,7 @@ tags:
 
 toc: true
 toc_label: "My Table of Contents"
+toc_sticky: true
 toc_icon: "cog"
 ---
 
