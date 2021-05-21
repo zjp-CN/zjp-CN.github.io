@@ -1,6 +1,6 @@
 ---
 title: "Post: Standard"
-updated: "2021-05-22"
+date: "2021-05-22"
 excerpt_separator: "<!--more-->"
 categories:
   - Blog
