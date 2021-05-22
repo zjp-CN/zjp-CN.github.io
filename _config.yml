@@ -86,12 +86,12 @@ defaults:
       type: posts
     values:
       layout: single
-      author_profile: true
+      author_profile: false
       read_time: true
       comments: false
       share: false
       related: true
-      show_date: true
+      show_date: false
   # _pages
   - scope:
       path: "_pages"

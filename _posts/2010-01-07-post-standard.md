@@ -3,7 +3,7 @@ title: "Post: Standard"
 date: "2021-05-22"
 excerpt_separator: "<!--more-->"
 categories:
-  - Blog
+  - test
 tags:
   - Post Formats
   - readability
