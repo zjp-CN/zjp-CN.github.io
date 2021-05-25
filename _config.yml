@@ -23,6 +23,13 @@ search: true
 locale: zh-CN
 timezone: Asia/Shanghai # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
+
+
+# 对 css 和 js 资源的 cdn 加速配置
+cdn:
+    jsdelivr:
+        enabled: true
+
 # Build settings
 markdown: kramdown
 remote_theme: mmistakes/minimal-mistakes
