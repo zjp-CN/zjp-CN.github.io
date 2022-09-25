@@ -31,7 +31,7 @@ jobs:
         uses: actions/checkout@v3
         with:
           fetch-depth: 0
-          submodules: true
+          # submodules: true
           # If using the 'assets' git submodule from Chirpy Starter, uncomment above
           # (See: https://github.com/cotes2020/chirpy-starter/tree/main/assets)
 
@@ -43,7 +43,7 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: 3 # reads from a '.ruby-version' or '.tools-version' file if 'ruby-version' is omitted
-          bundler-cache: true
+          bundler-cache: false
 
       - name: Build site
         run: bundle exec jekyll b -d "_site${{ steps.pages.outputs.base_path }}"
