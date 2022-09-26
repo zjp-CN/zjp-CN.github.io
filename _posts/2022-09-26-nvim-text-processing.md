@@ -1,25 +1,24 @@
 ---
 title: nvim 文本处理：查询、替换与删除
 date: 2022-09-26 23:07:16 +0800
+description: nvim 文本处理
 categories: [nvim]
 tags: [nvim, 教程]
 ---
 
-# 查询、替换与删除
-
 > 大部分内容整理自：[Advanced Vim topics, tips and tricks (by *Mark McDonnell*)](https://www.integralist.co.uk/posts/vim/)
-
-注意：表格中的 `\|` 实际只需要输入 `|`。
 
 ## `global`
 
-| 命令                                 | 功能                                                                                |
-|--------------------------------------|-------------------------------------------------------------------------------------|
-| `:global/pattern/excmd`              | 对满足 `pattern` 的行文本进行 `excmd` 操作                                          |
-| `:g/^foo/d` 等价于 `:g/^foo/norm dd` | 删除 `foo` 开头的行（`g = global`，`d = delete`）                                   |
-| `:g!/^foo/d`                         | 删除不是 `foo` 开头的行                                                             |
-| `:g/foo/norm @q \| update`           | 对含 `foo` 的行执行 `@q` 宏，并更新文本[^norm]                                      |
-| `:g/^/exe "norm \<s-j>"`             | 每两行进行合并[^exe]                                                                |
+| 命令                                 | 功能                                              |
+|--------------------------------------|---------------------------------------------------|
+| `:global/pattern/excmd`              | 对满足 `pattern` 的行文本进行 `excmd` 操作        |
+| `:g/^foo/d` 等价于 `:g/^foo/norm dd` | 删除 `foo` 开头的行（`g = global`，`d = delete`） |
+| `:g!/^foo/d`                         | 删除不是 `foo` 开头的行                           |
+| `:g/foo/norm @q \| update`[^table]   | 对含 `foo` 的行执行 `@q` 宏，并更新文本[^norm]    |
+| `:g/^/exe "norm \<s-j>"`             | 每两行进行合并[^exe]                              |
+
+[^table]: 注意：表格中的 `\|` 实际只需要输入 `|`。
 
 [^norm]: [`norm`](https://vimhelp.org/various.txt.html#%3Anormal) 表示模拟 norm 模式下操作
 
@@ -175,7 +174,7 @@ nvim -u NONE --headless\
  +":qa"
 ```
 
-```bash
+```diff
 [a.md] aa.md  b.md
 :!git diff
 diff --git a/a.md b/a.md
@@ -197,3 +196,5 @@ index 4075523..86a1d9c 100644
 +...qw...
 +pp...
 ```
+
+## 注脚
