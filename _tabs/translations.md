@@ -4,6 +4,9 @@ order: 5
 icon: fas fa-pen-alt
 ---
 
+> 此页面也被设置为 404 重定向至此
+{: .prompt-warning }
+
 # Rust
 
 - [笔记][rust-note]
