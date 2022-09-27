@@ -15,6 +15,7 @@ tabs:
   tags: 标签
   archives: 归档
   about: 关于
+  translations: 笔记/翻译
 
 # the text displayed in the search bar & search results
 search:
@@ -23,9 +24,9 @@ search:
   no_results: 搜索结果为空
 
 panel:
-  lastmod: 最近更新
-  trending_tags: 热门标签
-  toc: 文章内容
+  lastmod: 最近
+  trending_tags: 标签
+  toc: 大纲
 
 copyright:
   # Shown at the bottom of the post
