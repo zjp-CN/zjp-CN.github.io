@@ -1,5 +1,5 @@
 ---
-title: nvim 文本处理：查询、替换与删除
+title: nvim 技巧之 quickfix 与文本处理
 date: 2022-09-26 23:07:16 +0800
 description: nvim 文本处理
 categories: [nvim]
