@@ -57,6 +57,56 @@ tags: [nvim, 教程]
 
 和 `vimgrep` 系列类似，`grep` 为全局 quickfix，局部的为 `lgrep`，全局增加的为 `grepadd`，局部增加的为 `lgrepadd`。
 
+## `telescope`
+
+许多插件提供将插件的搜索结果发送至 quickfix。这里介绍最常见的 [`telescope`] 的搜索功能。
+
+首先启用历史记录快捷键：
+
+```lua
+local mappings = {
+  i = { -- insert mode
+    -- 上翻/下翻历史搜索记录：所有功能共享历史搜索记录
+    ["<C-Down>"] = require('telescope.actions').cycle_history_next,
+    ["<C-Up>"] = require('telescope.actions').cycle_history_prev,
+    -- 更多可设置快捷键的功能见 `:help telescope.actions`
+  },
+}
+require'telescope'.setup {
+  defaults = {
+    mappings = mappings,
+  },
+}
+```
+
+然后设置常见的一些快捷键来快速打开功能对话框：
+
+```vim
+nnoremap ,f <cmd>Telescope find_files<cr>
+nnoremap ,l <cmd>Telescope live_grep<cr>
+nnoremap ,g <cmd>Telescope grep_string<cr>
+nnoremap ,b <cmd>Telescope buffers<cr>
+nnoremap ,d <cmd>Telescope diagnostics<cr>
+```
+
+Normal 模式中按 `,g` 会在当前项目中搜索当前光标下的内容，弹出 telescope 对话框之后：
+* 按 `<Ctrl-q>` 将所有内容发送至 quickfix
+* 或者按 `<Tab>`/`<Shift-Tab>` 多选，按 `<Alt-q>` 把选择的内容发送至 quickfix
+
+使用 `<Ctrl-/>` 和 `?` 显示对话框在 Insert/Normal 模式下的快捷键映射。
+
+`live_grep` 和 `grep_string` 使用的是 `telescope.defaults.vimgrep_arguments`，默认为 [`rg`] 且进行了一些配置，所以：
+* 直接支持正则而无需额外转义，注意这使用了 Rust [`regex`] 库的正则语法
+* 开启了 smart-case，输入小写字母时会查询该字母的大小写，而输入大写则只查询大写
+* 如果你想使用其他搜索程序，可以自行配置 `defaults = { vimgrep_arguments = { ... }, mappings = mappings, }`
+
+更多功能见 telescope 的[帮助文档][telescope-doc]。
+
+[`rg`]: https://github.com/BurntSushi/ripgrep
+[`regex`]: https://docs.rs/regex/latest/regex/#syntax
+[`telescope`]: https://github.com/nvim-telescope/telescope.nvim
+[telescope-doc]: https://github.com/nvim-telescope/telescope.nvim/blob/master/doc/telescope.txt
+
 ## 处理搜索结果
 
 通常 `vimgrep` 和 `grep` 用于搜索内容，并通过 `copen`/`lopen` 把搜索结果（文件路径、位置信息、内容）放置于 quickfix。
@@ -196,5 +246,3 @@ index 4075523..86a1d9c 100644
 +...qw...
 +pp...
 ```
-
-## 注脚
