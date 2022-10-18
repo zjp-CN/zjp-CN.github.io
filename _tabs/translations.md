@@ -24,7 +24,7 @@ icon: fas fa-pen-alt
 
 [^tbs]: 它们大部分被放到 *[Rust-Chinese-Translation]* 组织仓库下，里面还有一些半成品。
 
-[tlborm]: https://github.com/zjp-CN/tlborm
+[tlborm]: https://zjp-cn.github.io/tlborm
 [api-guidelines]: https://rust-chinese-translation.github.io/api-guidelines/
 [rand]: https://rust-chinese-translation.github.io/Rust-Rand-Book-zh/
 [salsa]: https://rust-chinese-translation.github.io/salsa-book/
