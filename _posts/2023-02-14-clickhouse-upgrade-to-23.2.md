@@ -205,5 +205,12 @@ writing new private key to '/etc/clickhouse-server/server.key'
 -----
 ```
 
+注意：我使用了 root 创建配置文件和生成秘钥文件，因此还遇到权限问题（但未在日志中显示），所以需要
+`chown clickhouse: /etc/clickhouse-server/ -R`
+
+```shell
+2023.02.15 21:51:28.888353 [ 1369548 ] {} <Error> Application: Poco::Exception. Code: 1000, e.code() = 0, I/O error: ECKeyImpl, cannot open file: /etc/clickhouse-server/server.key, Stack trace (when copying this message, always include the lines below):
+```
+
 [配置文件]: https://clickhouse.com/docs/en/operations/configuration-files/
 [#41819]: https://github.com/ClickHouse/ClickHouse/issues/41819
