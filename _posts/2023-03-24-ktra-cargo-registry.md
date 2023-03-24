@@ -41,7 +41,7 @@ git push origin main
 
 注意：
 * 本文描述的是私有 registry 部署（Index 仓库是私有的，发布的 crate 存于自己的私有服务器）
-* 如果你想基于私有 registry 进行更大范围的公开使用，那么你可能会对 ktra 的 [OpenId] 部分感兴趣（它更复杂）
+* 如果你想基于私有 registry 进行更大范围的公开使用，那么可能会对 ktra 的 [OpenId] 感兴趣（它更复杂）
 
 [OpenId]: https://book.ktra.dev/quick_start/openid.html
 
@@ -69,7 +69,7 @@ ktra = { index = "git@gitee.com:xxx/ktra-cargo-registry.git" }
   * 所以，你可能还需要设置 `git config --global credential.helper store` 或者 `git config --global credential.helper cache`
     来减少手动登录的次数。嗯，这就是 git 最基本的登录设置 :)
 
-# 步骤三：创建 ktra 配置文件
+# 步骤三：创建 ktra 配置文件并部署服务
 
 一个 TOML 文件，传递给 ktra 命令行，里面配置了 ktra 的内置数据库。我把它存放到 `~/.config/ktra/ktra.toml`：
 
@@ -92,12 +92,12 @@ git_name = "ktra"
 # ssh_pubkey_path = "~/.ssh/id_ed25519.pub"
 ```
 
-# 步骤四：准备账户
-
 ```shell
 cd ~/.config/ktra/
 ktra # 或者 ktra -c ./ktra.toml，此命令部署服务到本地 8000 端口
 ```
+
+# 步骤四：准备账户
 
 由于服务需要一直运行，所以打开新的终端运行以下命令：
 
@@ -231,7 +231,7 @@ tag = "xxx"
 
 但 git 标签没有 semver。你可以 follow [这个讨论](https://www.reddit.com/r/rust/comments/l0bcmz/whats_the_best_way_to_run_a_private_cargo_registry/)。
 
-## 可以在项目中混用不同的 registries 吗？
+## 在项目中混用不同的 registries？
 
 当然可以！
 
