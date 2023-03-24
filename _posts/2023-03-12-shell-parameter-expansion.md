@@ -1,6 +1,6 @@
 ---
 title: Shell Parameter Expansion
-date: 2023-03-24 15:19:35 +0800
+date: 2023-03-12 20:19:35 +0800
 categories: [开发日志, linux]
 tags: [开发日志, linux, 工具, shell]
 ---
