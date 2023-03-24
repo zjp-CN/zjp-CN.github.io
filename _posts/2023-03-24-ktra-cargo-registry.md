@@ -1,8 +1,8 @@
 ---
 title: 使用 ktra 搭建私人 Cargo registry
 date: 2023-03-24 15:19:35 +0800
-categories: [rust]
-tags: [开发日志, rust, cargo, 工具]
+categories: [Rust]
+tags: [开发日志, Rust, cargo, 工具]
 img_path: /assets/img/2023-03-24-ktra-cargo-registry/
 ---
 
@@ -38,6 +38,12 @@ git add config.json
 git commit -am "initial commit"
 git push origin main
 ```
+
+注意：
+* 本文描述的是私有 registry 部署（Index 仓库是私有的，发布的 crate 存于自己的私有服务器）
+* 如果你想基于私有 registry 进行更大范围的公开使用，那么你可能会对 ktra 的 [OpenId] 部分感兴趣（它更复杂）
+
+[OpenId]: https://book.ktra.dev/quick_start/openid.html
 
 # 步骤二：增加本地 Cargo registry
 
@@ -111,7 +117,7 @@ CARGO_NET_GIT_FETCH_WITH_CLI=true cargo login --registry ktra
 
 自行验证看起来很复杂，而且并不支持完整的 SSH 验证（我没试过），建议使用 git cli 的方式验证。
 
-（如果你的 git 不想折腾 SSH，在 Cargo registry 中使用 HTTPS 地址，步骤二已经描述了。）
+（如果你的 git 不想折腾 SSH，就在 Cargo registry 中使用 HTTPS 地址，步骤二已经描述了。）
 
 注意：由于 registry 写的是 SSH 地址，这意味着从 ktra 拉取库都需要 SSH 验证，建议不要像上面那样采用命令行的局部环境变量。
 
@@ -180,6 +186,7 @@ From ssh://gitee.com/xxx/ktra-cargo-registry
 
 ```shell
 cargo new use-ktra
+cargo add serde # 来自 crates.io 的库           
 cargo add ktra-test --registry ktr
 cargo check # bingo!
 ```
@@ -187,5 +194,48 @@ cargo check # bingo!
 ```toml
 # cat Cargo.toml
 [dependencies]
+serde = "1.0.158"
 ktra-test = { version = "0.1.0", registry = "ktra" }
 ```
+
+# 回答一些基本问题
+
+## 我为什么需要私有 registry？
+
+如果你的代码是公开的、给别人使用的，当然不需要一个私有 registry。
+
+如果不是，那么你可能想弄一个私人控制的、小范围的东西。
+
+## 除了 ktra，还有别的选择吗？
+
+其他选择见 <https://github.com/rust-lang/cargo/wiki/Third-party-registries>。
+
+ktra 是 Rust 编写的，而且功能简单小巧，特别适合个人使用或者小团体使用。
+
+## Index 仓库与 ktra 的关系？
+
+我没有仔细研究过，但我认为：
+* Index 仓库只存有 crate 的基本信息（名称、版本、其依赖信息等等，不含代码），步骤五有一个真实示例，或者去
+  <https://github.com/rust-lang/crates.io-index> 看看。
+* ktra 可视为一个服务端，管理 crate 和 Index，把 crate 存于 ktra 所运行的本地目录下。（cargo publish 打包的数据就是项目源代码）
+
+## 有没有比 ktra 更轻量的选择？
+
+Cargo 支持从 HTTPS/SSH 拉取私人仓库，所以这是最简单的做法，比如：
+
+```toml
+[dependencies.my-private-crate]
+git = "ssh://xxx"
+tag = "xxx"
+```
+
+但 git 标签没有 semver。你可以 follow [这个讨论](https://www.reddit.com/r/rust/comments/l0bcmz/whats_the_best_way_to_run_a_private_cargo_registry/)。
+
+## 可以在项目中混用不同的 registries 吗？
+
+当然可以！
+
+Cargo 把 [crates.io](https://crates.io/) 作为默认的 registry，如果需要指定成 ktra，只需要相关的命令行参数或者配置参数。
+
+步骤五就是示例。但这么做会导致你的项目无法发布到 crates.io 上，因为那上面不支持别的 registries 的库。而 ktra
+也不支持从 crates.io 拉过来 —— 不过你自己需要什么，完全可以自定义。
