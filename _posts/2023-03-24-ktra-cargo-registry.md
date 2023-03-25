@@ -187,7 +187,7 @@ From ssh://gitee.com/xxx/ktra-cargo-registry
 ```shell
 cargo new use-ktra
 cargo add serde # 来自 crates.io 的库           
-cargo add ktra-test --registry ktr
+cargo add ktra-test --registry ktra
 cargo check # bingo!
 ```
 
