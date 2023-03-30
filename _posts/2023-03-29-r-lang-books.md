@@ -50,7 +50,3 @@ Hadley Wickham 大佬的博客：<https://hadley.nz/>
   * 官网：<https://www.rstudio.com/resources/cheatsheets/>
 * ggplot2：<https://github.com/rstudio/cheatsheets/blob/main/data-visualization.pdf>
 
-
-# 小技巧
-
-* 重置 DataFrame 的索引：`row.names(df) <- NULL`
