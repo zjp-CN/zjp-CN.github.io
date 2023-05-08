@@ -3,7 +3,6 @@ title: R 语言绘图包整理搜集
 date: 2023-05-07 22:21:21 +0800
 categories: [R 语言]
 tags: [R 语言, 绘图]
-img_path: /assets/img/2023-05-07-rplotting
 ---
 
 
