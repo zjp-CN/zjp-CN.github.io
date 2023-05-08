@@ -44,7 +44,7 @@ tags: [R 语言, 绘图]
 
 小提琴图 + 散点图
 
-![](https://github.com/eclarke/ggbeeswarm/blob/main/README_files/figure-gfm/ggplot2-examples-4.png?raw=true)
+![](https://raw.githubusercontent.com/eclarke/ggbeeswarm/main/README_files/figure-gfm/ggplot2-examples-4.png)
 
 # 布局
 
