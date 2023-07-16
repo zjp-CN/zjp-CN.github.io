@@ -42,6 +42,7 @@ git push origin main
 注意：
 * 本文描述的是私有 registry 部署（Index 仓库是私有的，发布的 crate 存于自己的私有服务器）
 * 如果你想基于私有 registry 进行更大范围的公开使用，那么可能会对 ktra 的 [OpenId] 感兴趣（它更复杂）
+* `dl` 和 `api` 填 IP 地址：对于服务器，把 localhost 换成服务器的公网 IP 地址（继续使用 localhost 则只供服务器本机使用这个源）
 
 [OpenId]: https://book.ktra.dev/quick_start/openid.html
 
