@@ -240,3 +240,11 @@ Cargo 把 [crates.io](https://crates.io/) 作为默认的 registry，如果需�
 
 步骤五就是示例。但这么做会导致你的项目无法发布到 crates.io 上，因为那上面不支持别的 registries 的库。而 ktra
 也不支持从 crates.io 拉过来 —— 不过你自己需要什么，完全可以自定义。
+
+## 我的编辑器插件无法正确获取非 cargo 官方源的依赖的版本号
+
+编辑器的 Cargo.toml 插件如果对非 cargo 官方源的版本号获取有问题，可以通过 `cargo search` 查询某个源某个库最新的版本：
+
+```shell
+cargo search your-crate-name --registry ktra
+```
