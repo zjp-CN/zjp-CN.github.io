@@ -73,7 +73,7 @@ imm[12] = 0
   * RV64 基本上是 RV32 的超集，唯一例外是压缩指令。
     * RV64C 更换了若干 RV32C 代码大小指令，因为对于 64 位地址，更换后的指令能压缩更多代码。
     * RV64C 不支持压缩版本的跳转并链接（c.jal）和整数与浮点字存取指令（c.lw、c.sw、c.lwsp、c.swsp、c.flw、c.fsw、c.flwsp 和 c.fswsp）。
-      * 所以 `lw`、`sw` 之类的指令在 RV64C 中只有 32 位，没有 16 位
+      * 所以 `lw`、`sw` 之类的指令在 RV64GC 中只有 32 位，没有 16 位
     * 作为替代，RV64C 支持更常用的字加减指令（c.addw、c.addiw、c.subw）以及双字存取指令（c.ld、c.sd、c.ldsp、c.sdsp）。
 
 ## 示例：`addi sp, sp, 0x30` 压缩指令
