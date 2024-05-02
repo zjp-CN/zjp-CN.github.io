@@ -15,7 +15,7 @@ tmux 是一个流行且相当成熟的终端复用工具。在 Ubuntu 中，你�
 作为一个每天使用终端的人，有必要梳理和介绍我在这方面的终端使用经验。
 
 实现终端复用 (terminal multiplex) 或者类似的效果有多种方式和工具：
-* 终端模拟器：像 [WezTerm] 直接支持终端复用，它也支持多窗口；而 [WindowsTerminal]、[mobaxterm]、[xshell] 仅支持多窗口。
+* 终端模拟器：像 [WezTerm] 直接支持终端复用，它也支持多窗口；而 [WindowsTerminal]、[mobaxterm]、xshell 仅支持多窗口。
   * 终端复用和多窗口其实异曲同工，并没有哪种方式更好
   * 对于像 [Alacritty] 这样的软件，即不支持终端复用，也不支持窗口，那只有两条路可走：开多个模拟器界面，或者借助 TUI 软件
   * 当然，即便支持多窗口的模拟器也可以走以上两条路
@@ -37,7 +37,6 @@ zellij 相比来说很年轻，它的亮点在于提供超越终端复用的功�
 [WezTerm]: https://wezfurlong.org/wezterm/
 [WindowsTerminal]: https://github.com/microsoft/terminal
 [mobaxterm]: https://mobaxterm.mobatek.net/
-[xshell]: www.xshell.com
 [Alacritty]: https://alacritty.org/
 [tmux]: https://github.com/tmux/tmux
 [zellij]: https://zellij.dev/
