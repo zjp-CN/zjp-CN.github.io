@@ -1,6 +1,6 @@
 ---
 title: 【笔记】rCore (RISC-V)：抢占式 OS 与中断机制
-date: 2024-04-29 08:00:00 +0800
+date: 2024-05-02 08:00:00 +0800
 categories: [rCore, RISC-V]
 tags: [rCore, RISC-V]
 img_path: /assets/img/rcore

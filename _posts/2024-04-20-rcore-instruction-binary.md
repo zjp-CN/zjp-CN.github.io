@@ -1,6 +1,6 @@
 ---
 title: 【笔记】rCore (RISC-V)：指令的二进制格式
-date: 2024-04-20 16:00:00 +0800
+date: 2024-04-20 08:00:00 +0800
 categories: [rCore, RISC-V]
 tags: [rCore, RISC-V]
 img_path: /assets/img/
