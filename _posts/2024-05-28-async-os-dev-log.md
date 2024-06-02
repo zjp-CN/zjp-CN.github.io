@@ -69,6 +69,8 @@ targets = ["riscv64gc-unknown-none-elf"]
   * 如果你需要固定 RA 版本的话，还可以在这个列表中添加 `rust-analyzer` —— 需不需要由你的 IDE 配置决定
 * targets 表示添加额外针对一些目标平台的 [交叉编译工具链](https://doc.rust-lang.org/nightly/rustc/platform-support.html)
 
+这个工具链设置应用于 os、lib_so、user 这些子目录中的 Rust 项目。
+
 ### 3. 运行 rCore-N （基于 tmux）
 
 当前在 async-os/rCore-N 文件夹下。
