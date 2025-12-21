@@ -4,6 +4,8 @@ date: 2025-09-14 20:00:00 +0800
 img_path: /assets/img
 ---
 
+This is a [cross post to my journey in RustChinaConf2025](https://zjp-cn.github.io/rust-note/ramblings/RustChinaConf2025.html).
+
 <style>
 .pic {
   display: flex; gap: 5px; height: 350px; overflow: auto;
