@@ -32,7 +32,7 @@ img_path: /assets/img
 
 当我刚开始学习 Rust 的时候，正值 Rust 中国大会第一届那年，也就是 2020 年。
 
-今年有幸作为演讲者首次参加大会，正值 Rust 语言 10 周年。关于 [我与 Rust 语言的 5 年](./2025-08-15-five-years-with-rust.md)，已不再赘述。
+今年有幸作为演讲者首次参加大会，正值 Rust 语言 10 周年。关于 [我与 Rust 语言的 5 年](https://zjp-cn.github.io/rust-note/ramblings/five-years-with-rust.html)，已不再赘述。
 
 在这篇文章里，我将回顾参加杭州 Rust 大会的一些体验和感受。官方图片见[此处](https://www.xxpie.com/m/album?id=68bed1c5eb20ce1b2537b237)，
 宣传贴见[此处](https://rustcc.cn/article?id=3fc1cbea-3010-4d08-88e4-13e08d7d0f69)。
